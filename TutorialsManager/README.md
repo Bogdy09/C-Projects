@@ -1,1 +1,1 @@
-This project manages a tutorial database. It has an option for the administrator, who can add, remove, update, and display tutorials, and an option for the user, who can sort the tutorials and also create and manage a watchlist with his/her favorite tutorials.
+This project manages a tutorial database. It has an option for the administrator, who can add, remove, update, and display tutorials, and an option for the user, who can sort the tutorials and also create and manage a watchlist with his/her favorite tutorials. It also works with dynamic vectors and includes test cases.
