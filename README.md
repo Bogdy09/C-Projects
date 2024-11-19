@@ -6,8 +6,12 @@ Welcome to my C++ Projects Portfolio! This repository showcases a diverse collec
 
   This portfolio demonstrates:
 
-Proficiency in Core C++: Mastery of fundamental concepts such as data structures, algorithms, memory management, and OOP principles.
-Advanced Features: Use of templates and STL.
-Problem-Solving Abilities: Implementation of complex algorithms and efficient solutions.
-Cross-Disciplinary Development: Combining C++ with libraries for graphics, GUI design, and real-world applications.
-Code Organization and Documentation: Clean, modular code with comments for readability and maintainability.
+**Proficiency in Core C++:** Mastery of fundamental concepts such as data structures, algorithms, memory management, and OOP principles.
+
+**Advanced Features:** Use of templates and STL.
+
+**Problem-Solving Abilities:** Implementation of complex algorithms and efficient solutions.
+
+**Cross-Disciplinary Development:** Combining C++ with libraries for graphics, GUI design, and real-world applications.
+
+**Code Organization and Documentation:** Clean, modular code with comments for readability and maintainability.
