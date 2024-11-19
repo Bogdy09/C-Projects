@@ -1,0 +1,3 @@
+C:/Users/lazab/OneDrive/Documents/GitHub/a1-Bogdy09-1/cmake-build-debug/CMakeFiles/lab1.dir
+C:/Users/lazab/OneDrive/Documents/GitHub/a1-Bogdy09-1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/OneDrive/Documents/GitHub/a1-Bogdy09-1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
