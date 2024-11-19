@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>README.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #56a8f5;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+README.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">Assignment 02-03</span>
+
+<span class="s0">## </span><span class="s2">Requirements</span>
+<span class="s0">- </span><span class="s2">Each student will be given one of the problems below.</span>
+<span class="s0">- </span><span class="s2">The solution must use the </span><span class="s1">**</span><span class="s2">C language</span><span class="s1">**</span><span class="s2">.</span>
+<span class="s0">- </span><span class="s2">The problem should be solved over 2 iterations, due `Week 3` and `Week 4`</span><span class="s1">:</span>
+
+<span class="s0">### </span><span class="s2">Week 3</span>
+<span class="s0">- </span><span class="s2">Solve at least requirements </span><span class="s1">**</span><span class="s2">a</span><span class="s1">** </span><span class="s2">and </span><span class="s1">**</span><span class="s2">b</span><span class="s1">**</span><span class="s2">.</span>
+<span class="s0">- </span><span class="s2">The vector used in the repository can be statically allocated.</span>
+
+<span class="s0">### </span><span class="s2">Week 4</span>
+<span class="s0">- </span><span class="s2">Solve all problem requirements.</span>
+<span class="s0">- </span><span class="s2">Define a vector structure with specific operations using a dynamically allocated array.</span>
+<span class="s0">- </span><span class="s2">Use modular programming.</span>
+<span class="s0">- </span><span class="s2">Source code must be specified and include tests for all non-UI functions</span>
+<span class="s0">- </span><span class="s2">The program must not leak memory</span><span class="s1">!</span>
+<span class="s0">- </span><span class="s2">Use a layered architecture for your application </span><span class="s1">(</span><span class="s2">domain, repository, controller, UI</span><span class="s1">)</span><span class="s2">. User interface, domain and data access elements will be stored in different modules. The user interface module will only contain the user interface part.</span>
+<span class="s0">- </span><span class="s2">Have at least 10 entries available at application startup.</span>
+<span class="s0">- </span><span class="s2">Handle user input errors gracefully </span><span class="s1">(</span><span class="s2">replace program crashes with nice error messages </span><span class="s1">:</span><span class="s2">blush</span><span class="s1">:)</span><span class="s2">.</span>
+
+<span class="s0">## </span><span class="s2">Bonus possibilities</span>
+<span class="s0">1. </span><span class="s2">Implement the following requirements using function pointers </span><span class="s1">**[</span><span class="s2">deadline</span><span class="s1">: </span><span class="s2">week 4, bonus</span><span class="s1">: </span><span class="s2">0.1p</span><span class="s1">]**:</span>
+    <span class="s0">- </span><span class="s2">For requirement </span><span class="s1">**</span><span class="s2">b</span><span class="s1">**</span><span class="s2">, add a different type of filtering </span><span class="s1">(</span><span class="s2">of your choice</span><span class="s1">)</span><span class="s2">.</span>
+    <span class="s0">- </span><span class="s2">For requirement </span><span class="s1">**</span><span class="s2">c</span><span class="s1">**</span><span class="s2">, add descending sorting. The user should choose the type of sort and the program will show the list of entities accordingly.</span>
+<span class="s0">2. </span><span class="s2">Provide 2 different implementations for the undo/redo functionality</span><span class="s1">: </span><span class="s2">one using a list of operations </span><span class="s1">(</span><span class="s2">this approach is a precursor of the </span><span class="s1">[</span><span class="s2">Command design pattern</span><span class="s1">](</span><span class="s3">https://en.wikipedia.org/wiki/Command_pattern</span><span class="s1">)) </span><span class="s2">and one where each state of the repository is recorded </span><span class="s1">(</span><span class="s2">this approach is not unlike the </span><span class="s1">[</span><span class="s2">Memento design pattern</span><span class="s1">](</span><span class="s3">https://en.wikipedia.org/wiki/Memento_pattern</span><span class="s1">))</span><span class="s2">. Implement your dynamic array generically, such that it can contain any type of elements </span><span class="s1">(</span><span class="s2">use void</span><span class="s1">*)</span><span class="s2">. Use this structure for your repository, as well as to implement both undo/redo functionalities </span><span class="s1">**[</span><span class="s2">deadline</span><span class="s1">: </span><span class="s2">week 5, bonus</span><span class="s1">: </span><span class="s2">0.1p</span><span class="s1">]**</span><span class="s2">.</span>
+
+<span class="s0">## </span><span class="s2">Problem Statements</span>
+
+<span class="s0">### </span><span class="s2">Pharmacy</span>
+<span class="s2">John is the administrator of the </span><span class="s1">*</span><span class="s2">“Smiles”</span><span class="s1">* </span><span class="s2">Pharmacy. He needs a software application to help him manage his pharmacy's medicine stocks. Each </span><span class="s1">**</span><span class="s2">Medicine</span><span class="s1">** </span><span class="s2">has the following attributes</span><span class="s1">: </span><span class="s2">`name`, `concentration`, `quantity` and `price`. John wants the application to help him in the following ways</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete or update a medicine. A medicine is uniquely identified by its name and concentration. If a product that already exists is added, its quantity will be updated </span><span class="s1">(</span><span class="s2">the new quantity is added to the existing one</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">See all available medicines containing a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all the available medicines will be considered</span><span class="s1">)</span><span class="s2">, sorted ascending by medicine name.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">See only those medicines that are in short supply </span><span class="s1">(</span><span class="s2">quantity less than `X` items, where the value of `X` is user-provided</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+
+<span class="s0">### </span><span class="s2">Bakery</span>
+<span class="s2">Mary runs her family's bakery, </span><span class="s1">*</span><span class="s2">“Bread'n Bagel”</span><span class="s1">*</span><span class="s2">. Every day she struggles with keeping up to date with available stocks of raw materials and would like a program to help her manage the business more effectively. Each </span><span class="s1">**</span><span class="s2">Material</span><span class="s1">** </span><span class="s2">used in the bakery must have</span><span class="s1">: </span><span class="s2">a `name`, a `supplier`, a `quantity` and the `expiration date`. Mary wants a software application that helps her in the following ways</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete and update a material. A raw material is uniquely identified by its name, supplier and expiration date. If a material that already exists is added, its quantity will be modified </span><span class="s1">(</span><span class="s2">the new quantity is added to the existing one</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">See all available materials past their expiration date, containing a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all materials past their expiration date will be considered</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">Display all materials from a given supplier, which are in short supply </span><span class="s1">(</span><span class="s2">quantity less than a user-provided value</span><span class="s1">)</span><span class="s2">, sorted ascending by their quantities.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+
+<span class="s0">### </span><span class="s2">Tourism Agency</span>
+<span class="s2">The employees of </span><span class="s1">*</span><span class="s2">“Happy Holidays”</span><span class="s1">* </span><span class="s2">need an application to manage the offers that the agency has. Each </span><span class="s1">**</span><span class="s2">Offer</span><span class="s1">** </span><span class="s2">has a `type` </span><span class="s1">(</span><span class="s2">one of `seaside, mountain or city break`</span><span class="s1">)</span><span class="s2">, a `destination`, a `departure date` and a `price`. The employees need the application to help them in the following ways</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete and update an offer. An offer is uniquely identified by its destination and departure dates.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">Display all tourism offers whose destinations contain a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all destinations are considered</span><span class="s1">)</span><span class="s2">, and show them sorted ascending by price.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">Display all offers of a given type, having their departure after a given date.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+
+<span class="s0">### </span><span class="s2">Real Estate Agency</span>
+<span class="s2">Evelyn owns a real estate agency. Being also the only employee, she needs an application to help her manage all the real estates of her clients. Each </span><span class="s1">**</span><span class="s2">Estate</span><span class="s1">** </span><span class="s2">has a type </span><span class="s1">(</span><span class="s2">one of `house, apartment or penthouse`</span><span class="s1">)</span><span class="s2">, an `address`, a `surface` and a `price`. Evelyn needs the application to help her in the following ways</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete or update an estate. An estate is uniquely identified by its address.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">Display all estates whose address contains a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all estates will be considered</span><span class="s1">)</span><span class="s2">, sorted ascending by their price.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">See all estates of a given type, having the surface greater than a user provided value.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+
+<span class="s0">### </span><span class="s2">Intelligent Refrigerator</span>
+<span class="s2">The company </span><span class="s1">*</span><span class="s2">“Home SmartApps”</span><span class="s1">* </span><span class="s2">have decided to design a new intelligent refrigerator. Besides the hardware, they need a software application to manage the refrigerator. Each </span><span class="s1">**</span><span class="s2">Product</span><span class="s1">** </span><span class="s2">that the fridge can store has a `name`, a `category` </span><span class="s1">(</span><span class="s2">one of `dairy, sweets, meat or fruit`</span><span class="s1">)</span><span class="s2">, a `quantity` and an `expiration date`. The software application will provide the following functionalities</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete or update a product. A product is uniquely identified by name and category. If a product that already exists is added, its quantity will be updated </span><span class="s1">(</span><span class="s2">the new quantity is added to the existing one</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">Display all products whose name contains a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all products from the refrigerator are considered</span><span class="s1">)</span><span class="s2">, and show them sorted ascending by the existing quantity.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">Display all products of a given category </span><span class="s1">(</span><span class="s2">if the category is empty, all types of food will be considered</span><span class="s1">) </span><span class="s2">whose expiration dates are close </span><span class="s1">(</span><span class="s2">expire in the following `X` days, where the value of `X` is user-provided</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+
+<span class="s0">### </span><span class="s2">World Population Monitoring</span>
+<span class="s2">The World Population Monitoring Organisation needs an application to help keep track of countries’ populations. Each </span><span class="s1">**</span><span class="s2">Country</span><span class="s1">** </span><span class="s2">has a unique `name`, the `continent` it belongs to </span><span class="s1">(</span><span class="s2">one of `Europe, America, Africa, Australia or Asia`</span><span class="s1">)</span><span class="s2">, and a population </span><span class="s1">(</span><span class="s2">stored in millions</span><span class="s1">)</span><span class="s2">.  The employees of the organisation need the application to help them in the following ways</span><span class="s1">:\</span>
+<span class="s1">**(</span><span class="s2">a</span><span class="s1">)** </span><span class="s2">Add, delete or update a country. Updating must also consider the case of migration</span><span class="s1">: </span><span class="s2">a given number of people leave one country to migrate to another.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">b</span><span class="s1">)** </span><span class="s2">Display all countries whose name contains a given string </span><span class="s1">(</span><span class="s2">if the string is empty, all the countries should be considered</span><span class="s1">)</span><span class="s2">.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">c</span><span class="s1">)** </span><span class="s2">Display all countries on a given continent </span><span class="s1">(</span><span class="s2">if the continent is empty, all countries will be considered</span><span class="s1">)</span><span class="s2">, whose populations are greater than a given value, sorted ascending by population.</span><span class="s1">\</span>
+<span class="s1">**(</span><span class="s2">d</span><span class="s1">)** </span><span class="s2">Provide multiple undo and redo functionality. Each step will undo/redo the previous operation performed by the user.</span>
+</pre>
+</body>
+</html>

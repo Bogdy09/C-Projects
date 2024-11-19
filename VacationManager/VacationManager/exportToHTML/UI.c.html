@@ -1,0 +1,184 @@
+<html>
+<head>
+<title>UI.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #b3ae60;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #bcbec4;}
+.s5 { color: #7a7e85;}
+.s6 { color: #2aacb8;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+UI.c</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;stdio.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&lt;intrin.h&gt;</span>
+<span class="s0">#include </span><span class="s2">&quot;domain.h&quot;</span>
+<span class="s0">#include </span><span class="s2">&quot;dynamic_array.h&quot;</span>
+
+
+<span class="s3">void </span><span class="s1">print</span><span class="s4">(){</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;1. Add an offer.</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;2. Delete an offer.</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;3. Update an offer.</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;4. Display by string(ordered ascending after price).</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;0. Exit.</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+
+    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter a choice(0-4): &quot;</span><span class="s4">);</span>
+<span class="s4">}</span>
+
+
+<span class="s5">/*void delete_vacation(Vacation *vacations, int *counter, char destination[]){ 
+    for (int i = 0; i &lt; *counter; i++) { 
+        if (strcmp(vacations[i].destination, destination) == 0) { 
+            for (int j = i; j &lt; *counter - 1; j++) { 
+                vacations[j] = vacations[j + 1]; 
+            } 
+            (*counter)--; 
+        } 
+    } 
+}*/</span>
+
+
+
+<span class="s5">/*void resize_array(Vacation **vacations, int *cap, int new_cap){ 
+    *vacations= realloc(*vacations, new_cap*(sizeof(Vacation))); 
+    *cap=new_cap; 
+}*/</span>
+<span class="s3">int </span><span class="s1">main</span><span class="s4">() {</span>
+    <span class="s3">int </span><span class="s1">counter </span><span class="s4">= </span><span class="s6">0</span><span class="s4">, </span><span class="s1">i</span><span class="s4">;</span>
+    <span class="s1">VacationVector vacations</span><span class="s4">;</span>
+    <span class="s1">init_vector</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">);</span>
+    <span class="s3">while </span><span class="s4">(</span><span class="s6">1</span><span class="s4">) {</span>
+        <span class="s1">print</span><span class="s4">();</span>
+        <span class="s3">int </span><span class="s1">choice</span><span class="s4">;</span>
+        <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%d&quot;</span><span class="s4">, &amp;</span><span class="s1">choice</span><span class="s4">);</span>
+
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">choice </span><span class="s4">== </span><span class="s6">1</span><span class="s4">) {</span>
+            <span class="s3">if</span><span class="s4">(</span><span class="s1">counter</span><span class="s4">==</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">){</span>
+                <span class="s1">resize</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">*</span><span class="s6">2</span><span class="s4">);</span>
+            <span class="s4">}</span>
+            <span class="s3">char </span><span class="s1">type</span><span class="s4">[</span><span class="s6">50</span><span class="s4">], </span><span class="s1">destination</span><span class="s4">[</span><span class="s6">50</span><span class="s4">];</span>
+            <span class="s3">int </span><span class="s1">day</span><span class="s4">, </span><span class="s1">month</span><span class="s4">, </span><span class="s1">year</span><span class="s4">;</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the type of vacation: &quot;</span><span class="s4">);</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, </span><span class="s1">type</span><span class="s4">);</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the destination: &quot;</span><span class="s4">);</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, </span><span class="s1">destination</span><span class="s4">);</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the departure date: &quot;</span><span class="s4">);</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%d %d %d&quot;</span><span class="s4">, &amp;</span><span class="s1">day</span><span class="s4">, &amp;</span><span class="s1">month</span><span class="s4">, &amp;</span><span class="s1">year</span><span class="s4">);</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">check_date_and_destination</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">destination</span><span class="s4">, </span><span class="s1">day</span><span class="s4">, </span><span class="s1">month</span><span class="s4">, </span><span class="s1">year</span><span class="s4">, </span><span class="s1">counter</span><span class="s4">) != </span><span class="s6">0</span><span class="s4">)</span>
+                <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Invalid input ! Please try again! </span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+            <span class="s3">else </span><span class="s4">{</span>
+                <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the price: &quot;</span><span class="s4">);</span>
+                <span class="s3">int </span><span class="s1">price</span><span class="s4">;</span>
+                <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%d&quot;</span><span class="s4">, &amp;</span><span class="s1">price</span><span class="s4">);</span>
+                <span class="s1">Vacation vacation</span><span class="s4">;</span>
+                <span class="s1">strcpy</span><span class="s4">(</span><span class="s1">vacation</span><span class="s4">.</span><span class="s1">type</span><span class="s4">, </span><span class="s1">type</span><span class="s4">);</span>
+                <span class="s1">strcpy</span><span class="s4">(</span><span class="s1">vacation</span><span class="s4">.</span><span class="s1">destination</span><span class="s4">, </span><span class="s1">destination</span><span class="s4">);</span>
+                <span class="s1">vacation</span><span class="s4">.</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">day</span><span class="s4">=</span><span class="s1">day</span><span class="s4">;</span>
+                <span class="s1">vacation</span><span class="s4">.</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">month</span><span class="s4">=</span><span class="s1">month</span><span class="s4">;</span>
+                <span class="s1">vacation</span><span class="s4">.</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">year</span><span class="s4">=</span><span class="s1">year</span><span class="s4">;</span>
+                <span class="s1">vacation</span><span class="s4">.</span><span class="s1">price</span><span class="s4">=</span><span class="s1">price</span><span class="s4">;</span>
+                <span class="s1">add_vacation</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">vacation</span><span class="s4">);</span>
+                <span class="s1">counter</span><span class="s4">++;</span>
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+
+
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">choice </span><span class="s4">== </span><span class="s6">2</span><span class="s4">) {</span>
+            <span class="s3">if</span><span class="s4">(</span><span class="s1">counter</span><span class="s4">==</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">){</span>
+                <span class="s1">resize</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">*</span><span class="s6">2</span><span class="s4">);</span>
+            <span class="s4">}</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the destination of the offer you want to delete: &quot;</span><span class="s4">);</span>
+            <span class="s3">char </span><span class="s1">destination</span><span class="s4">[</span><span class="s6">50</span><span class="s4">];</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, &amp;</span><span class="s1">destination</span><span class="s4">);</span>
+            <span class="s1">delete_vacation</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, &amp;</span><span class="s1">counter</span><span class="s4">, </span><span class="s1">destination</span><span class="s4">);</span>
+        <span class="s4">}</span>
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">choice </span><span class="s4">== </span><span class="s6">3</span><span class="s4">) {</span>
+            <span class="s3">if</span><span class="s4">(</span><span class="s1">counter</span><span class="s4">==</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">){</span>
+                <span class="s1">resize</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">*</span><span class="s6">2</span><span class="s4">);</span>
+            <span class="s4">}</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the destination of the offer you want to update: &quot;</span><span class="s4">);</span>
+            <span class="s3">char </span><span class="s1">destination</span><span class="s4">[</span><span class="s6">50</span><span class="s4">];</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, &amp;</span><span class="s1">destination</span><span class="s4">);</span>
+            <span class="s3">for </span><span class="s4">(</span><span class="s1">i </span><span class="s4">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">counter</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+                <span class="s3">if </span><span class="s4">(</span><span class="s1">strcmp</span><span class="s4">(</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">destination</span><span class="s4">, </span><span class="s1">destination</span><span class="s4">) == </span><span class="s6">0</span><span class="s4">) {</span>
+                    <span class="s3">int </span><span class="s1">found </span><span class="s4">= </span><span class="s1">i</span><span class="s4">;</span>
+                    <span class="s3">char </span><span class="s1">destination1</span><span class="s4">[</span><span class="s6">50</span><span class="s4">], </span><span class="s1">type1</span><span class="s4">[</span><span class="s6">50</span><span class="s4">];</span>
+                    <span class="s1">time dep_date1</span><span class="s4">;</span>
+                    <span class="s3">int </span><span class="s1">price1</span><span class="s4">;</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the new type: &quot;</span><span class="s4">);</span>
+                    <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, </span><span class="s1">type1</span><span class="s4">);</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the new destination: &quot;</span><span class="s4">);</span>
+                    <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, </span><span class="s1">destination1</span><span class="s4">);</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the new departure date: &quot;</span><span class="s4">);</span>
+                    <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%d %d %d&quot;</span><span class="s4">, &amp;</span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">day</span><span class="s4">, &amp;</span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">month</span><span class="s4">, &amp;</span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">year</span><span class="s4">);</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter the new price: &quot;</span><span class="s4">);</span>
+                    <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%d&quot;</span><span class="s4">, &amp;</span><span class="s1">price1</span><span class="s4">);</span>
+
+                    <span class="s3">if </span><span class="s4">(</span><span class="s1">check_date_and_destination</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">destination1</span><span class="s4">, </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">day</span><span class="s4">, </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">month</span><span class="s4">, </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">year</span><span class="s4">, </span><span class="s1">counter</span><span class="s4">) &gt; </span><span class="s6">1</span><span class="s4">) {</span>
+                        <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Invalid input!&quot;</span><span class="s4">);</span>
+                    <span class="s4">} </span><span class="s3">else </span><span class="s4">{</span>
+                        <span class="s1">strcpy</span><span class="s4">(</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">type</span><span class="s4">, </span><span class="s1">type1</span><span class="s4">);</span>
+                        <span class="s1">strcpy</span><span class="s4">(</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">destination</span><span class="s4">, </span><span class="s1">destination1</span><span class="s4">);</span>
+                        <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">day </span><span class="s4">= </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">day</span><span class="s4">;</span>
+                        <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">month </span><span class="s4">= </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">month</span><span class="s4">;</span>
+                        <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">year </span><span class="s4">= </span><span class="s1">dep_date1</span><span class="s4">.</span><span class="s1">year</span><span class="s4">;</span>
+                        <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">found</span><span class="s4">].</span><span class="s1">price </span><span class="s4">= </span><span class="s1">price1</span><span class="s4">;</span>
+                    <span class="s4">}</span>
+
+                <span class="s4">}</span>
+
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+        <span class="s3">if </span><span class="s4">(</span><span class="s1">choice </span><span class="s4">== </span><span class="s6">4</span><span class="s4">) {</span>
+            <span class="s1">VacationVector list</span><span class="s4">;</span>
+            <span class="s3">if</span><span class="s4">(</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">size</span><span class="s4">==</span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">){</span>
+                <span class="s1">resize</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">cap</span><span class="s4">*</span><span class="s6">2</span><span class="s4">);</span>
+            <span class="s4">}</span>
+            <span class="s3">int </span><span class="s1">k </span><span class="s4">= </span><span class="s6">0</span><span class="s4">;</span>
+            <span class="s3">char </span><span class="s1">string</span><span class="s4">[</span><span class="s6">50</span><span class="s4">];</span>
+            <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Please enter a string: &quot;</span><span class="s4">);</span>
+            <span class="s1">scanf</span><span class="s4">(</span><span class="s2">&quot;%s&quot;</span><span class="s4">, &amp;</span><span class="s1">string</span><span class="s4">);</span>
+            <span class="s3">if </span><span class="s4">(</span><span class="s1">strcmp</span><span class="s4">(</span><span class="s1">string</span><span class="s4">, </span><span class="s2">&quot;0&quot;</span><span class="s4">) == </span><span class="s6">0</span><span class="s4">) {</span>
+                <span class="s3">for </span><span class="s4">(</span><span class="s1">i </span><span class="s4">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">size</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++) {</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Type: %s | Destination: %s | Departure Date: %d %d %d | Price: %d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">,</span>
+                           <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">type</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">destination</span><span class="s4">,</span>
+                           <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">day</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">month</span><span class="s4">, </span><span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">year</span><span class="s4">,</span>
+                           <span class="s1">vacations</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">price</span><span class="s4">);</span>
+                <span class="s4">}</span>
+
+
+            <span class="s4">} </span><span class="s3">else </span><span class="s4">{</span>
+
+                <span class="s3">if</span><span class="s4">(</span><span class="s1">find_and_sort</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">, </span><span class="s1">counter</span><span class="s4">, </span><span class="s1">string</span><span class="s4">, &amp;</span><span class="s1">k</span><span class="s4">, &amp;</span><span class="s1">list</span><span class="s4">)==</span><span class="s6">0</span><span class="s4">)</span>
+                    <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Invalid input!</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">);</span>
+                <span class="s3">else </span><span class="s4">{</span>
+                    <span class="s3">for </span><span class="s4">(</span><span class="s1">i </span><span class="s4">= </span><span class="s6">0</span><span class="s4">; </span><span class="s1">i </span><span class="s4">&lt; </span><span class="s1">k</span><span class="s4">; </span><span class="s1">i</span><span class="s4">++)</span>
+                        <span class="s1">printf</span><span class="s4">(</span><span class="s2">&quot;Type: %s | Destination: %s | Departure Date: %d %d %d | Price: %d</span><span class="s3">\n</span><span class="s2">&quot;</span><span class="s4">,</span>
+                               <span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">type</span><span class="s4">, </span><span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">destination</span><span class="s4">,</span>
+                               <span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">day</span><span class="s4">, </span><span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">month</span><span class="s4">, </span><span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">dep_date</span><span class="s4">.</span><span class="s1">year</span><span class="s4">,</span>
+                               <span class="s1">list</span><span class="s4">.</span><span class="s1">data</span><span class="s4">[</span><span class="s1">i</span><span class="s4">].</span><span class="s1">price</span><span class="s4">);</span>
+                <span class="s4">}</span>
+
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+        <span class="s3">if</span><span class="s4">(</span><span class="s1">choice</span><span class="s4">==</span><span class="s6">0</span><span class="s4">){</span>
+            <span class="s1">free_vector</span><span class="s4">(&amp;</span><span class="s1">vacations</span><span class="s4">);</span>
+            <span class="s3">break</span><span class="s4">;</span>
+        <span class="s4">}</span>
+    <span class="s4">}</span>
+<span class="s4">}</span>
+
+
+</pre>
+</body>
+</html>
