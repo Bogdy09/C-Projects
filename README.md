@@ -1,7 +1,7 @@
-C++ Projects Portfolio
+**C++ Projects Portfolio**
 Welcome to my C++ Projects Portfolio! This repository showcases a diverse collection of projects that I developed during my university studies. Each project reflects my growing expertise in C++ programming, ranging from fundamental algorithms to full-fledged GUI applications. This portfolio is a testament to my journey as a developer. It reflects my ability to tackle challenges, learn new concepts, and implement them effectively. By exploring this repository, you’ll get a glimpse into my problem-solving approach and my passion for coding.
 
-🛠️ Skills Highlighted
+**🛠️ Skills Highlighted**
 This portfolio demonstrates:
 
 Proficiency in Core C++: Mastery of fundamental concepts such as data structures, algorithms, memory management, and OOP principles.
