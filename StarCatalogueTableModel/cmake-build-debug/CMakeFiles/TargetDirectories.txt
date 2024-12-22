@@ -1,0 +1,5 @@
+C:/Users/lazab/CLionProjects/final_star_catalogue(tablemodel)/cmake-build-debug/CMakeFiles/final_star_catalogue_tablemodel_.dir
+C:/Users/lazab/CLionProjects/final_star_catalogue(tablemodel)/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/final_star_catalogue(tablemodel)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lazab/CLionProjects/final_star_catalogue(tablemodel)/cmake-build-debug/CMakeFiles/final_star_catalogue_tablemodel__autogen_timestamp_deps.dir
+C:/Users/lazab/CLionProjects/final_star_catalogue(tablemodel)/cmake-build-debug/CMakeFiles/final_star_catalogue_tablemodel__autogen.dir
