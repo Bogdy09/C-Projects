@@ -1,0 +1,1 @@
+This application keeps track of clients and their dwellings. It can add and remove clients and dwellings, display the clients with their respective dwellings and the ones available to buy, and also save all the clients in a text file.
