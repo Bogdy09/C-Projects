@@ -1,0 +1,4 @@
+Bogdan;50
+Mike;20
+Jason;43
+Justin;30

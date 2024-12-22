@@ -1,0 +1,8 @@
+1;Who is the president of USA?;Joe Biden;10
+2;What is the biggest country?;Russia;5
+3;Is the bat a mammal?;Yes;10
+4;3*10?;30;25
+5;Where do penguins live?;South Pole;30
+12;sdf;sdfv;1
+111;asd;asdf;12
+111;asd;asdf;12

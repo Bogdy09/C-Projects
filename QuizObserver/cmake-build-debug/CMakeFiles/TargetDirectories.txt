@@ -1,0 +1,5 @@
+C:/Users/lazab/CLionProjects/final_quiz_observer/cmake-build-debug/CMakeFiles/final_quiz_observer.dir
+C:/Users/lazab/CLionProjects/final_quiz_observer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/final_quiz_observer/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lazab/CLionProjects/final_quiz_observer/cmake-build-debug/CMakeFiles/final_quiz_observer_autogen_timestamp_deps.dir
+C:/Users/lazab/CLionProjects/final_quiz_observer/cmake-build-debug/CMakeFiles/final_quiz_observer_autogen.dir
