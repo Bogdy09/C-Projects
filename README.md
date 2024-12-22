@@ -6,7 +6,7 @@ Welcome to my C++ Projects Portfolio! This repository showcases a diverse collec
 
   This portfolio demonstrates:
 
-**Proficiency in Core C++:** Mastery of fundamental concepts such as data structures, algorithms, memory management, and OOP principles.
+**Proficiency in Core C++:** Mastery of fundamental concepts such as algorithms, memory management, and OOP principles.
 
 **Advanced Features:** Use of templates and STL.
 
