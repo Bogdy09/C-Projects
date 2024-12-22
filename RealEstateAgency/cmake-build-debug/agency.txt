@@ -1,0 +1,4 @@
+Name: James Income: 1200.000000
+Name: Mike Income: 2345.000000
+Name: Marta Income: 3545.000000
+Name: Sofia Income: 24675.000000
