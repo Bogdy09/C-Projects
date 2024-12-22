@@ -1,0 +1,2 @@
+Hospital name: Surgery Number of doctors: 12 Number of patients: 24Efficient
+Hospital name: Surgery Number of doctors: 12 Number of patients: 10Not efficient

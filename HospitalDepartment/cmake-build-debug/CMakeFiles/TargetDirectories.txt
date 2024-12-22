@@ -1,0 +1,3 @@
+C:/Users/lazab/CLionProjects/t2_hospital_department/cmake-build-debug/CMakeFiles/t2_hospital_department.dir
+C:/Users/lazab/CLionProjects/t2_hospital_department/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/t2_hospital_department/cmake-build-debug/CMakeFiles/rebuild_cache.dir
