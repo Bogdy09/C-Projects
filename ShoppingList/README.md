@@ -1,0 +1,2 @@
+
+This is a GUI application designed for managing a shopping list in an organized and interactive way. It allows users to display all items in the list, search for items by name or category, and filter items by a specific category while sorting them by quantity. The application provides an intuitive interface to view details such as category, item name, and quantity, making it easy to manage and locate shopping list items efficiently.
