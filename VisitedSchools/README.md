@@ -1,1 +1,1 @@
-This project is an application made for parents who want to see what schools they visited and liked for their children.
+This project is an application made for parents who want to see what schools they visited and liked for their children. They can add schools that they like, remove the ones that they do not or even sort the schools by name or the date they visited them.
