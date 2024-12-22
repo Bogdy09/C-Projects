@@ -1,0 +1,3 @@
+C:/Users/lazab/CLionProjects/SensorsShop/cmake-build-debug/CMakeFiles/IoT.dir
+C:/Users/lazab/CLionProjects/SensorsShop/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/SensorsShop/cmake-build-debug/CMakeFiles/rebuild_cache.dir

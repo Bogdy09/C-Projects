@@ -1,0 +1,2 @@
+Producer: HumiditySensor Type: Humidity Sensor  Recordings: 1.000000,  Price: 4.000000
+Producer: s Type: Smoke Sensor  Recordings: 1.000000,  Price: 25.000000
