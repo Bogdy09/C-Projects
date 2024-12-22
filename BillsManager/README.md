@@ -1,0 +1,1 @@
+This is a GUI application that manages companies and their bills in an interactive interface. It can add bills, display them, filter the bills by payment status, and calculate total unpaid bills for a certain company. 
