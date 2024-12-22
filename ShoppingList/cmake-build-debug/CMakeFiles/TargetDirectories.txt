@@ -1,0 +1,5 @@
+C:/Users/lazab/CLionProjects/test3_shoppinglist/cmake-build-debug/CMakeFiles/test3_shoppinglist.dir
+C:/Users/lazab/CLionProjects/test3_shoppinglist/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/test3_shoppinglist/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lazab/CLionProjects/test3_shoppinglist/cmake-build-debug/CMakeFiles/test3_shoppinglist_autogen_timestamp_deps.dir
+C:/Users/lazab/CLionProjects/test3_shoppinglist/cmake-build-debug/CMakeFiles/test3_shoppinglist_autogen.dir
