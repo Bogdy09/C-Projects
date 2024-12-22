@@ -1,0 +1,5 @@
+C:/Users/lazab/CLionProjects/final_research_table_model/cmake-build-debug/CMakeFiles/final_research_table_model.dir
+C:/Users/lazab/CLionProjects/final_research_table_model/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/lazab/CLionProjects/final_research_table_model/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/lazab/CLionProjects/final_research_table_model/cmake-build-debug/CMakeFiles/final_research_table_model_autogen_timestamp_deps.dir
+C:/Users/lazab/CLionProjects/final_research_table_model/cmake-build-debug/CMakeFiles/final_research_table_model_autogen.dir

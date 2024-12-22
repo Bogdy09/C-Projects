@@ -1,0 +1,6 @@
+John;phd student
+James;postdoc
+Zsuzana;senior
+Diana;senior
+Maria;postdoc
+Jonathan;senior

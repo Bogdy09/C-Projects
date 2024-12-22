@@ -1,0 +1,7 @@
+Jogging;running rapidly;proposed;James;2
+Mansion;building new house;accepted;Zsuzana;3
+Fast-food;new burger place;accepted;Maria;1
+Education;new school in town;proposed;Jonathan;2
+Beach;a new beach close to the city;accepted;Diana;3
+Gardening;new project for a new botanic zoo;accepted;John;1
+Passage;new infrastructure project;proposed;James;3
